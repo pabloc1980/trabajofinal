@@ -50,6 +50,13 @@ nav>ul>li:hover{
 nav>ul>li:hover > a{
     text-shadow: 0.5px 0.5px var(--colorOscuroTransparente2);
 }
+.cambiaFondoNav{
+    background-color: var(--colorPrincipal);
+}
+.cambiaFondoNav>ul>li>a{
+    color: var(--colorFondo);
+    text-shadow: 1px 1px var(--colorPrincipal), 2px 3px var(--colorFondo);
+}
 /*------------------------ fin de menu de navegacion------------------------*/
 main{
     padding: 100px 20px;
@@ -84,7 +91,7 @@ footer>div{
     width: 300px;
     height: 60px;
 }
-.logo, footer>div>img{
+footer>div>img{
     height: 80px;
 }
 .titulo-footer, footer>p{
@@ -119,6 +126,7 @@ header{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    transform: translate(-6000px);
 }
 .descripcion-tarjeta{
     width: 90%;
@@ -141,4 +149,22 @@ header{
 .boton-tarjeta:active{
     box-shadow: 0px 0px var(--colorFondo);
     transform: translate(3px, 2px);
+}
+@keyframes desdeDerecha{
+    from{
+        transform: translateX(500px);
+        opacity: 0;
+    }
+    to{
+        transform: translate(0);
+    }
+}
+@keyframes desdeIzquierda{
+    from{
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+    to{
+        transform: translate(0);
+    }
 }
