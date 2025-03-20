@@ -1,4 +1,7 @@
 window.addEventListener("scroll", ()=> {
+    /**
+     * Animacion para nav de paginas
+     */
     let scrollY = window.scrollY;
     let nav, tarj1, tarj2;
     nav = document.querySelector("nav");
@@ -9,8 +12,26 @@ window.addEventListener("scroll", ()=> {
     }else{
         nav.classList.remove("cambiaFondoNav");
     }
+    /**
+     * fin animacion nav de paginas
+     */
+    /*Animacion para pagina index */
     if (scrollY > 250) {
-        tarj1.style = "animation : desdeIzquierda 3s 1s forwards";
+        tarj1.style = "animation : desdeIzquierda 3s 2s forwards";
         tarj2.style = "animation : desdeDerecha 3s 1s forwards";
-    }   
+    }  
+    /*fin animacion pagina index */ 
+});
+
+/*
+* pagina historia -  botones video
+*/
+let video = document.querySelector("video");
+let botonPlay = document.querySelector("#play-video");
+botonPlay.addEventListener("click", ()=>{ 
+    video.play();
+});
+let botonPause = document.querySelector("#pause-video");
+botonPause.addEventListener("click",()=>{
+    video.pause()
 });

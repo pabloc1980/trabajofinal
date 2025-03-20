@@ -15,7 +15,7 @@
     --colorSombraNegra : #000000;
 }
 p{
-    color: var(--colorPrincipal);
+    color: var(--colorFondo);
 }
 /*------------------------Menu de navegacion------------------------*/
 nav{
@@ -76,6 +76,9 @@ h2{
 h1, h2, .descripcion-tarjeta, .boton-tarjeta, .titulo-footer{
     text-align: center;
 }
+span{
+    font-weight: 600;
+}
 /*------------------------footer------------------------*/
 footer{
     background: var(--colorFondo);
@@ -83,7 +86,6 @@ footer{
     justify-content: space-between;
     align-items: center;
     padding: 90px;
-    color: var(--colorPrincipal);
 }
 footer>div{
     display: flex;
@@ -96,6 +98,7 @@ footer>div>img{
 }
 .titulo-footer, footer>p{
     font-size: 1rem;
+    color: var(--colorPrincipal);
 }
 /*------------------------fin footer------------------------*/
 
@@ -126,7 +129,7 @@ header{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    transform: translate(-6000px);
+    transform: translate(-50000px);
 }
 .descripcion-tarjeta{
     width: 90%;
@@ -167,4 +170,67 @@ header{
     to{
         transform: translate(0);
     }
+}
+
+/*-------------------pagina historia/*-------------------*/
+#header2{
+    background: url("./assets/imagenes/historia-programacion.jpg");
+    height: 70dvh;
+}
+.fondoAzul{
+    background: var(--colorOscuroTransparente);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-historia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 80px;
+}
+.tarjeta-historia{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 80px 50px;
+    gap: 20px;
+}
+.tarjeta-historia-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    gap: 40px;
+}
+.tarjeta-historia>img{
+    width: 50%;
+}
+#div-primeros-lenguajes{
+    width: 90%;
+}
+.seccion-video{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px;
+    gap: 80px;
+}
+.contenedor-video{
+    width: 70%;
+    padding: 5px;
+    background-color: var(--colorOscuroTransparente);
+}
+video{
+    width: 100%;
+}
+.botones-video{
+    width: 80px;
+    padding: 15px 10px;
 }
