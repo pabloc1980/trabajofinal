@@ -225,12 +225,36 @@ header{
 .contenedor-video{
     width: 70%;
     padding: 5px;
-    background-color: var(--colorOscuroTransparente);
+    background-color: var(--colorFondo);
 }
 video{
     width: 100%;
 }
 .botones-video{
     width: 80px;
-    padding: 15px 10px;
+    box-shadow: 2px 2px var(--colorSombraGris);
+    padding: 10px 15px;
+    background-color: var(--colorPrincipal);
+    color: var(--colorFondo);
+    font-weight: 300;
+    border: 1px solid var(--colorFondo);
+}
+.botones-video:active{
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px var(--colorSombraGris);
+}
+.div-controles{
+    background-color: var(--colorFondo);
+    border-radius: 10px;
+    padding: 20px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.div-controles>div{
+    display: flex;
+    gap: 20px;
+}
+#tiempo-video{
+    color:var(--colorPrincipal);
 }

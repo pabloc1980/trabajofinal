@@ -15,23 +15,11 @@ window.addEventListener("scroll", ()=> {
     /**
      * fin animacion nav de paginas
      */
-    /*Animacion para pagina index */
-    if (scrollY > 250) {
+    /*Animaciones de tarjetas */
+    if (scrollY > 250) { 
         tarj1.style = "animation : desdeIzquierda 3s 2s forwards";
         tarj2.style = "animation : desdeDerecha 3s 1s forwards";
     }  
-    /*fin animacion pagina index */ 
+    /*fin animacion de tarjetas*/ 
 });
 
-/*
-* pagina historia -  botones video
-*/
-let video = document.querySelector("video");
-let botonPlay = document.querySelector("#play-video");
-botonPlay.addEventListener("click", ()=>{ 
-    video.play();
-});
-let botonPause = document.querySelector("#pause-video");
-botonPause.addEventListener("click",()=>{
-    video.pause()
-});
