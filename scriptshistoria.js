@@ -1,5 +1,15 @@
+
+function estaDentroPantalla(elemento) {
+    const rect = elemento.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 && 
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
 /*
-* pagina historia - animacion nav
+* pagina historia scroll para animacion nav y divs
 */
 window.addEventListener("scroll", ()=> {
     let scrollY = window.scrollY;
@@ -10,8 +20,30 @@ window.addEventListener("scroll", ()=> {
     }else{
         nav.classList.remove("cambiaFondoNav");
     }
+    const tarjetas = document.querySelectorAll(".tarjeta-historia>img");
+    tarjetas.forEach((tarjeta, key) => {      
+            if (estaDentroPantalla(tarjeta)) {
+            switch (key) {
+                case 0:
+                    document.querySelector("#tarjeta1>.tarjeta-historia-texto").classList.add("tarjeta1-texto");
+                    document.querySelector("#tarjeta1>img").classList.add("tarjeta1-img");
+                    break;
+                case 1:
+                    document.querySelector("#tarjeta2>.tarjeta-historia-texto").classList.add("tarjeta2-texto");
+                    document.querySelector("#tarjeta2>img").classList.add("tarjeta2-img");
+                    break;
+                case 2:
+                    document.querySelector("#tarjeta3>.tarjeta-historia-texto").classList.add("tarjeta1-texto");
+                    document.querySelector("#tarjeta3>img").classList.add("tarjeta1-img");
+                    break;                     
+                default:
+                    break;
+            }
+        }
+    });
+ 
 });
-/* fin animacion nav de paginas */
+/* */
 /**
  *  botones video
  */
@@ -25,7 +57,7 @@ botonPlay.addEventListener("click", ()=>{
 });
 
 botonPause.addEventListener("click",()=>{
-    video.pause()
+    video.pause();
 });
 
 // Formatear el tiempo en minutos y segundos (mm:ss)

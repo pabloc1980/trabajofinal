@@ -174,8 +174,9 @@ header{
 
 /*-------------------pagina historia/*-------------------*/
 #header2{
-    background: url("./assets/imagenes/historia-programacion.jpg");
-    height: 70dvh;
+    background-image: url("./assets/imagenes/historia-programacion.jpg");
+    position: relative;
+    height: 70vh;
 }
 .fondoAzul{
     background: var(--colorOscuroTransparente);
@@ -192,6 +193,7 @@ header{
     align-items: center;
     flex-direction: column;
     padding-top: 80px;
+    perspective: 1000px;
 }
 .tarjeta-historia{
     display: flex;
@@ -199,6 +201,8 @@ header{
     align-items: center;
     padding: 80px 50px;
     gap: 20px;
+    perspective: 800px;
+    perspective-origin: top;
 }
 .tarjeta-historia-texto{
     display: flex;
@@ -207,12 +211,68 @@ header{
     align-items: center;
     width: 80%;
     gap: 40px;
+    visibility: hidden;
 }
 .tarjeta-historia>img{
     width: 50%;
+    visibility: hidden;
 }
 #div-primeros-lenguajes{
     width: 90%;
+}
+.tarjeta1-texto{
+    animation: tarjeta-historia1-texto 1.5s ease-out forwards;
+}
+.tarjeta1-img{
+    animation: tarjeta-historia1-imagen 1.5s ease-out forwards;
+}
+.tarjeta2-texto{
+    animation: tarjeta-historia2-texto 1.5s ease-out forwards;
+}
+.tarjeta2-img{
+    animation: tarjeta-historia2-imagen 1.5s ease-out forwards;
+}
+/*   Animaciones div parrafo 1 */
+@keyframes tarjeta-historia1-texto {
+    from{
+        transform: translateZ(-500px) translateX(500px) rotateY(-45deg);
+        visibility: visible;
+    }
+    to{
+        transform: translateZ(0px);
+        visibility: visible;
+    }
+}
+@keyframes tarjeta-historia1-imagen {
+    from{
+        transform: translateZ(500px) translateX(-500px) rotateY(-45deg);
+        visibility: visible;
+    }
+    to{
+        transform: translateZ(0px);
+        visibility: visible;
+    }
+}
+/*   Animaciones div parrafo 2 */
+@keyframes tarjeta-historia2-texto {
+    from{
+        transform: translateZ(-500px) translateX(-500px) rotateY(45deg);
+        visibility: visible;
+    }
+    to{
+        transform: translateZ(0px);
+        visibility: visible;
+    }
+}
+@keyframes tarjeta-historia2-imagen {
+    from{
+         transform: translateZ(500px) translateX(500px); 
+        visibility: visible;
+    }
+    to{
+        transform: translateZ(0px);
+        visibility: visible;
+    }
 }
 .seccion-video{
     display: flex;
@@ -257,4 +317,19 @@ video{
 }
 #tiempo-video{
     color:var(--colorPrincipal);
+}
+
+/*-------------------pagina juguemos/*-------------------*/
+#header3{
+    background-image: url("./assets/imagenes/img2.jpg");
+    position: relative;
+    height: 70vh;
+}
+.fondoAzul{
+    background: var(--colorOscuroTransparente);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
