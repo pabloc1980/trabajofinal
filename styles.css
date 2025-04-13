@@ -13,18 +13,30 @@
     --colorOscuroTransparente2 : #767a81de;
     --colorSombraGris : #808080;
     --colorSombraNegra : #000000;
+    --colorTextoMonitorLogo : #00FF00;
 }
 p{
     color: var(--colorFondo);
+}
+/*comunes*/
+header, .fondoAzul, .contenedor-historia, .seccion-video, .juego{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav, .tarjeta-historia, .tarjeta-historia-texto, #tarj1, #tarj2, .div-controles, .caja, #div-superior{
+    display: flex;
+    align-items: center;
+}
+nav, footer, footer>div, #tarj1, #tarj2, .tarjeta-historia-texto, .div-controles, #div-superior{
+    display: flex;
+    justify-content: space-between;
 }
 /*------------------------Menu de navegacion------------------------*/
 nav{
     z-index: 999;
     position: fixed; 
     top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
     padding: 10px 40px;
     transition: background-color 1s;
@@ -73,23 +85,20 @@ h2{
     font-weight: 500;
     color: var(--colorFondo);
 }
-h1, h2, .descripcion-tarjeta, .boton-tarjeta, .titulo-footer{
+h1, h2, .descripcion-tarjeta, .boton-tarjeta, .titulo-footer, .caja{
     text-align: center;
 }
 span{
     font-weight: 600;
 }
+
 /*------------------------footer------------------------*/
 footer{
     background: var(--colorFondo);
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 90px;
 }
 footer>div{
-    display: flex;
-    justify-content: space-between;
     width: 300px;
     height: 60px;
 }
@@ -108,10 +117,7 @@ header{
     height: 100vh;
     background-size: cover;
     background-attachment: fixed;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 .contenedor{
     margin: 100px 0px;
@@ -123,12 +129,10 @@ header{
 #tarj1, #tarj2{
     width: 450px;
     height: 500px;
+    display: flex;    
     gap: 40px;
     background-color: var(--colorPrincipal);
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     transform: translate(-50000px);
 }
 .descripcion-tarjeta{
@@ -182,15 +186,10 @@ header{
     background: var(--colorOscuroTransparente);
     height: 100%;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .contenedor-historia{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     padding-top: 80px;
     perspective: 1000px;
@@ -198,7 +197,6 @@ header{
 .tarjeta-historia{
     display: flex;
     justify-content: space-around;
-    align-items: center;
     padding: 80px 50px;
     gap: 20px;
     perspective: 800px;
@@ -207,8 +205,6 @@ header{
 .tarjeta-historia-texto{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     width: 80%;
     gap: 40px;
     visibility: hidden;
@@ -277,8 +273,6 @@ header{
 .seccion-video{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 100px 0px;
     gap: 80px;
 }
@@ -307,9 +301,6 @@ video{
     background-color: var(--colorFondo);
     border-radius: 10px;
     padding: 20px 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 .div-controles>div{
     display: flex;
@@ -325,11 +316,93 @@ video{
     position: relative;
     height: 70vh;
 }
-.fondoAzul{
-    background: var(--colorOscuroTransparente);
-    height: 100%;
-    width: 100%;
+.juego{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+}
+.cajas{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.caja > p{
+    color: var(--colorPrincipal);
+}
+.caja{
+    width: 200px;
+    height: 350px;
+    display: flex;
+    border: 2px solid var(--colorSombraNegra);
+    background-color: var(--colorSombraGris);
+}
+#div-superior>#imagen1{
+    transform: rotate(8deg);
+}
+#div-superior>#imagen2{
+    transform: rotate(-10deg);
+}
+#div-inferior{
+    height: 200px;
+}
+#div-inferior>#imagen3{
+    transform: rotate(93deg);
+}
+#div-superior{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+#imagen1, #imagen2, #imagen3{
+    width: 200px;
+    height: 350px;
+}
+#imagen1{
+    align-self: flex-start;
+}
+#imagen2{
+    align-self: flex-end;
+}
+
+
+/*** Logo ***/
+.compu1 {
+    animation: efecto1 ease-in 5s;
+    animation-iteration-count: 1;
+}
+.compu2 {
+    animation: efecto2 ease-in 5s;
+    animation-iteration-count: 1;
+}
+.texto-monitor{
+    animation: texto 2s 2s forwards;
+}
+@keyframes efecto1 {
+    0%, 20%{
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+    30%, 90%, 100%{
+        transform: translate(0, 0px);
+        opacity: 1;
+    }
+}
+@keyframes efecto2 {
+    0%,30%{
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+    40%, 90%, 100%{
+        transform: translate(0, 0px);
+        opacity: 1;
+    }
+}
+@keyframes texto {
+    from{
+        stroke: transparent;
+    }
+    to{
+        stroke: var(--colorTextoMonitorLogo);
+    }
 }
