@@ -22,15 +22,22 @@ p{
 header, .fondoAzul, .contenedor-historia, .seccion-video, .juego{
     display: flex;
     justify-content: center;
-    align-items: center;
 }
-nav, .tarjeta-historia, .tarjeta-historia-texto, #tarj1, #tarj2, .div-controles, .caja, #div-superior{
+nav, .tarjeta-historia, .tarjeta-historia-texto, #tarj1, #tarj2, .div-controles, .caja, #div-superior, header, .fondoAzul, .contenedor-historia, .seccion-video, .juego{
     display: flex;
     align-items: center;
 }
 nav, footer, footer>div, #tarj1, #tarj2, .tarjeta-historia-texto, .div-controles, #div-superior{
     display: flex;
     justify-content: space-between;
+}
+.contenedor-historia, .tarjeta-historia-texto, .seccion-video, .juego, #tarj1, #tarj2{
+    display: flex;
+    flex-direction: column;
+}
+.cajas, #div-superior{
+    display: flex;
+    flex-direction: row;
 }
 /*------------------------Menu de navegacion------------------------*/
 nav{
@@ -72,6 +79,7 @@ nav>ul>li:hover > a{
 /*------------------------ fin de menu de navegacion------------------------*/
 main{
     padding: 100px 20px;
+    perspective: 800px;
 }
 h1{
     font-weight: 400;
@@ -129,10 +137,8 @@ header{
 #tarj1, #tarj2{
     width: 450px;
     height: 500px;
-    display: flex;    
     gap: 40px;
     background-color: var(--colorPrincipal);
-    flex-direction: column;
     transform: translate(-50000px);
 }
 .descripcion-tarjeta{
@@ -187,10 +193,7 @@ header{
     height: 100%;
     width: 100%;
 }
-
 .contenedor-historia{
-    display: flex;
-    flex-direction: column;
     padding-top: 80px;
     perspective: 1000px;
 }
@@ -203,8 +206,6 @@ header{
     perspective-origin: top;
 }
 .tarjeta-historia-texto{
-    display: flex;
-    flex-direction: column;
     width: 80%;
     gap: 40px;
     visibility: hidden;
@@ -271,8 +272,6 @@ header{
     }
 }
 .seccion-video{
-    display: flex;
-    flex-direction: column;
     padding: 100px 0px;
     gap: 80px;
 }
@@ -316,14 +315,15 @@ video{
     position: relative;
     height: 70vh;
 }
-.juego{
-    display: flex;
-    flex-direction: column;
+.espacio-titulo{
+    padding: 10px 40px;
+    transition: color 3s ;
 }
 .cajas{
-    display: flex;
-    flex-direction: row;
+    transition: opacity 1s;
     gap: 20px;
+    transform: scale(1);
+    transition: gap 3s ease-in-out, transform 3s ease;
 }
 .caja > p{
     color: var(--colorPrincipal);
@@ -334,6 +334,13 @@ video{
     display: flex;
     border: 2px solid var(--colorSombraNegra);
     background-color: var(--colorSombraGris);
+    justify-content: center;
+}
+.caja:hover{
+    background-color: var(--colorFondo);
+}
+.caja:hover > p{
+    color : var(--colorPrincipal);
 }
 #div-superior>#imagen1{
     transform: rotate(8deg);
@@ -348,8 +355,6 @@ video{
     transform: rotate(93deg);
 }
 #div-superior{
-    display: flex;
-    flex-direction: row;
     gap: 40px;
     flex-wrap: wrap;
     height: fit-content;
@@ -364,7 +369,21 @@ video{
 #imagen2{
     align-self: flex-end;
 }
-
+.boton-reinicio{
+    display: flex;
+    margin: auto;
+    padding: 10px 100px;
+    background-color: var(--colorFondo);
+    box-shadow: 2px 2px var(--colorSombraGris);
+    color: var(--colorPrincipal);
+    font-weight: 300;
+    border: none;
+    text-transform: uppercase;
+}
+.boton-reinicio:active{
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px var(--colorOscuroTransparente2);
+}
 
 /*** Logo ***/
 .compu1 {
@@ -404,5 +423,15 @@ video{
     }
     to{
         stroke: var(--colorTextoMonitorLogo);
+    }
+}
+
+/* animacion del juego rompecabezas*/
+@keyframes resultado {
+    50%{
+        transform: translateY(300px) translateZ(300px);
+    }
+    100%{
+        transform: translateY(300px) translateZ(0px);
     }
 }
